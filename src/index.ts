@@ -2,7 +2,7 @@ import { Empleado, Persona, RequestLibros, ResponseLibros } from "./definiciones
 import { LoginRequestDTO } from "./servicios/login/types.js";
 import { login } from "./servicios/login/loginSvc.js";
 
-let numeros: string[] = ["1", "1", "2", "3", "4"];
+
 
 let persona: Empleado = {
     nombre: "Macarena",
@@ -60,16 +60,28 @@ function saludar(miVariable: FuncionSaludo) {
 
 let loginDTO: LoginRequestDTO = {
     username: "admin",
-    password: "aadmin"
+    password: "admin"
 }
 
 
 let loginResult = login(loginDTO);
 
-console.log(`el resultado del login fue: ${JSON.stringify(loginResult)}`);
+//console.log(`el resultado del login fue: ${JSON.stringify(loginResult)}`);
 
 
 
+// destructuracion.
+//arreglos
+
+let numeros: string[] = ["1", "2", "3", "4", "5"];
+
+let [b, a, ...resto] = numeros;
+
+console.log(`el valor de "a"  es ${a} y el valor de "b" es ${b} y el valor de "resto" es ${resto}`);
+
+const { nombre: name, nacionalidad } = persona;
+
+console.log(`el nombre de la persona es: ${name} y su nacionalidad es: ${nacionalidad}`);
 
 
 
